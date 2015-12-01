@@ -11,14 +11,19 @@
                     }
                     if (window.StatusBar) {
                         StatusBar.styleDefault();
-                    }
+                    }                   
                 });
-                $ionicPlatform.registerBackButtonAction(function() {
-                    if ($state.current.url == "/app/home") {
-                        ionic.Platform.exitApp();
-                    } else {
-                        $ionicHistory.goBack();
-                    }
-                });
+                 $ionicPlatform.registerBackButtonAction(function(e) {
+                        var backView = $ionicHistory.backView();
+                        console.log(backView);
+                        if (backView) {
+                            $ionicHistory.goBack();
+                        } else {
+                            //ionic.Platform.exitApp();
+                        }
+                        e.preventDefault();
+                        return false;
+                    });
+
             });
 })();

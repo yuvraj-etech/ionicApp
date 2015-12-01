@@ -3,7 +3,7 @@
 
     angular.module('ionicApp')
 
-            .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPlatform, $ionicHistory) {
+            .controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPlatform, $ionicHistory,$state) {
 
                 // Create the login modal that we will use later
                 $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -20,6 +20,15 @@
                 // Open the login modal
                 $scope.login = function() {
                     $scope.modal.show();
+                };
+                $scope.goContactUs = function() {
+                    $state.go('app.contactUs');
+                };
+                $scope.goHome = function() {
+                    $state.go('app.home');
+                };
+                $scope.goAboutUs = function() {
+                    $state.go('app.aboutUs');
                 };
             });
 

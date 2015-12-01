@@ -25,14 +25,14 @@
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item menu-close href="#/app/home">
-                    Home
+                <ion-item menu-close>
+                    <a ng-click="goHome()">Home</a>
                 </ion-item>
-                <ion-item menu-close href="#/app/aboutUs">
-                    About Us
+                <ion-item menu-close>
+                    <a ng-click="goAboutUs()">About Us</a>
                 </ion-item>
-                <ion-item menu-close href="#/app/contactUs">
-                    Contact Us
+                <ion-item menu-close>
+                    <a ng-click="goContactUs()">Contact Us</a>
                 </ion-item>
             </ion-list>
         </ion-content>
